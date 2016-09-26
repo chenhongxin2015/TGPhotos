@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TGSelectedImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="156" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="156" height="148"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCd-lm-6xA">
+                        <rect key="frame" x="0.0" y="0.0" width="156" height="148"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="封面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJY-qJ-fEN">
+                        <rect key="frame" x="0.0" y="118" width="156" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.47200899559999998" blue="0.13888612759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="FKU-Up-BSo"/>
+                            <constraint firstAttribute="height" constant="30" id="GpZ-Ud-2Gc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIK-L6-kUe">
+                        <rect key="frame" x="131" y="0.0" width="25" height="25"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="EfG-wu-M5L"/>
+                            <constraint firstAttribute="width" constant="25" id="yPP-iR-srj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                        <inset key="contentEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="x">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectedBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="wMU-dN-S5A"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MJY-qJ-fEN" secondAttribute="trailing" id="2cz-sp-KzN"/>
+                <constraint firstItem="BIK-L6-kUe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="74R-gJ-VoV"/>
+                <constraint firstAttribute="bottom" secondItem="BCd-lm-6xA" secondAttribute="bottom" id="Ahd-Xq-OYM"/>
+                <constraint firstAttribute="bottom" secondItem="MJY-qJ-fEN" secondAttribute="bottom" id="HUF-V0-ITq"/>
+                <constraint firstItem="MJY-qJ-fEN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Way-M5-PJK"/>
+                <constraint firstItem="BCd-lm-6xA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xlk-d9-B6S"/>
+                <constraint firstItem="BCd-lm-6xA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kp8-QP-Kjz"/>
+                <constraint firstAttribute="trailing" secondItem="BIK-L6-kUe" secondAttribute="trailing" id="q2j-hQ-f25"/>
+                <constraint firstAttribute="trailing" secondItem="BCd-lm-6xA" secondAttribute="trailing" id="u8i-BB-d6g"/>
+            </constraints>
+            <size key="customSize" width="156" height="148"/>
+            <connections>
+                <outlet property="btn" destination="BIK-L6-kUe" id="SSg-9u-noQ"/>
+                <outlet property="firstImage" destination="MJY-qJ-fEN" id="OWV-Df-G6n"/>
+                <outlet property="imageView" destination="BCd-lm-6xA" id="hhB-it-Ye9"/>
+            </connections>
+            <point key="canvasLocation" x="466" y="398"/>
+        </collectionViewCell>
+    </objects>
+</document>

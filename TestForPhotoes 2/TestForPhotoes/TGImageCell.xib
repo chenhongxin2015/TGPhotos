@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TGImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="111"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CuS-EE-lWL">
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="111"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is9-h6-4th">
+                        <rect key="frame" x="181" y="81" width="30" height="30"/>
+                        <color key="backgroundColor" red="0.7175480769" green="0.12160356730000001" blue="0.14935141699999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="TK2-LW-z4f"/>
+                            <constraint firstAttribute="height" constant="30" id="eiW-Qa-7dg"/>
+                        </constraints>
+                        <state key="normal" title="对"/>
+                        <state key="selected" title="对"/>
+                        <connections>
+                            <action selector="selectedBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hr1-Qk-eHy"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CuS-EE-lWL" secondAttribute="bottom" id="1eW-nO-u4a"/>
+                <constraint firstAttribute="trailing" secondItem="CuS-EE-lWL" secondAttribute="trailing" id="A5Q-VM-Ez8"/>
+                <constraint firstAttribute="trailing" secondItem="CuS-EE-lWL" secondAttribute="trailing" id="CcY-gt-OuI"/>
+                <constraint firstItem="CuS-EE-lWL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Pf9-km-ded"/>
+                <constraint firstAttribute="trailing" secondItem="Is9-h6-4th" secondAttribute="trailing" id="REu-kF-GWU"/>
+                <constraint firstAttribute="bottom" secondItem="Is9-h6-4th" secondAttribute="bottom" id="XKh-Lp-a7c"/>
+                <constraint firstItem="Is9-h6-4th" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XlQ-0q-m8g"/>
+                <constraint firstAttribute="bottom" secondItem="CuS-EE-lWL" secondAttribute="bottom" id="YqD-xl-d5I"/>
+                <constraint firstItem="CuS-EE-lWL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fLM-dx-eGV"/>
+                <constraint firstItem="CuS-EE-lWL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fO6-nR-358"/>
+                <constraint firstItem="CuS-EE-lWL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="x4B-yU-AIU"/>
+            </constraints>
+            <size key="customSize" width="211" height="111"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="1eW-nO-u4a"/>
+                    <exclude reference="CcY-gt-OuI"/>
+                    <exclude reference="Pf9-km-ded"/>
+                    <exclude reference="fO6-nR-358"/>
+                    <exclude reference="XlQ-0q-m8g"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imageView" destination="CuS-EE-lWL" id="BHg-rS-1R9"/>
+                <outlet property="selectedBtn" destination="Is9-h6-4th" id="85l-YK-rqL"/>
+            </connections>
+            <point key="canvasLocation" x="493.5" y="394.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
