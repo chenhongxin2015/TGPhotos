@@ -12,9 +12,6 @@
 #define TG_DEBUG
 static  ALAssetsLibrary *_assetsLibrary;
 
-//#define TG_SystemVersion9 4
-//(([UIDevice currentDevice].systemVersion.floatValue) > 9.0)
-//#define TG_SystemVersion8 (([UIDevice currentDevice].systemVersion.floatValue) < 9.0)
 @implementation TGPickerImageManager
 - (CViewController *)selectedVC
 {
@@ -323,24 +320,24 @@ static  ALAssetsLibrary *_assetsLibrary;
         PHAssetCreationRequest *assetCreationRequest = [PHAssetCreationRequest creationRequestForAssetFromImage:image];
         
         // 2.创建相册请求类(修改相册)PHAssetCollectionChangeRequest
-        PHAssetCollectionChangeRequest *assetCollectionChangeRequest = nil;
-        
-        // 获取之前相册
-        PHAssetCollection *assetCollection = [self fetchAssetCollection:@"上传照片"];
+//        PHAssetCollectionChangeRequest *assetCollectionChangeRequest = nil;
+//        
+//        // 获取之前相册
+//        PHAssetCollection *assetCollection = [self fetchAssetCollection:@"上传照片"];
         
         // 判断是否已有相册
-        if (assetCollection) {
-            // 如果存在已有同名相册   指定这个相册,创建相册请求修改类
-            assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
-        } else {  //不存在,创建新的相册
-            assetCollectionChangeRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:@"上传照片"];
-        }
+//        if (assetCollection) {
+//            // 如果存在已有同名相册   指定这个相册,创建相册请求修改类
+//            assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+//        } else {  //不存在,创建新的相册
+//            assetCollectionChangeRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:@"上传照片"];
+//        }
         // 3.把图片添加到相册中
         // NSFastEnumeration:以后只要看到这个,就可以表示数组
         //assetCreationRequest.placeholderForCreatedAsset 图片请求类占位符(相当于一个内存地址)
         //因为creationRequestForAssetFromImage方法是异步实行的,在这里不能保证 assetCreationRequest有值
         
-        [assetCollectionChangeRequest addAssets:@[assetCreationRequest.placeholderForCreatedAsset]];
+//        [assetCollectionChangeRequest addAssets:@[assetCreationRequest.placeholderForCreatedAsset]];
         
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
          NSLog(@"当前方法：%s\n,当前行数%d\n,当前线程%@\n",__func__,__LINE__,[NSThread currentThread]);
@@ -403,7 +400,7 @@ static  ALAssetsLibrary *_assetsLibrary;
     model.isSelected = YES;
     
     [self.selectedImages addObject:model];
-    //    [self.imagesAssetArray addObject:model];
+   
     [self.imagesAssetArray insertObject:model atIndex:0];
     
     if ([self.delegate respondsToSelector:@selector(selectedCameraImage)]) {

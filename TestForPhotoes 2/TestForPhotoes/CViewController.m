@@ -33,6 +33,8 @@
         [self.view addSubview:_sureBtn];
     }return  _sureBtn;
 }
+
+
 #warning 实际逻辑
 - (void)sureImage
 {
@@ -228,7 +230,10 @@
 
 - (void)selectedCameraImage
 {
-    [self.collectionView reloadData];
+    
+    [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.pickerManager.selectedImages.count - 1 inSection:0]]];
+    
+//    [self.collectionView reloadData];
 }
 
 

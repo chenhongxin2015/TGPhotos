@@ -500,7 +500,7 @@
 				INFOPLIST_FILE = TestForPhotoes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lzq.TestForPhotoes;
+				PRODUCT_BUNDLE_IDENTIFIER = TG.TestForPhotoes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -513,7 +513,7 @@
 				INFOPLIST_FILE = TestForPhotoes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lzq.TestForPhotoes;
+				PRODUCT_BUNDLE_IDENTIFIER = TG.TestForPhotoes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -18,9 +18,10 @@
     [super viewDidLoad];
     
     
-    self.navigationController.navigationBar.tintColor  = [UIColor grayColor];
-    self.navigationController.navigationBar.tintAdjustmentMode = UIViewTintAdjustmentModeAutomatic;
-    self.navigationController.navigationBar.titleTextAttributes = @{
+    self.navigationBar.tintColor  = [UIColor grayColor];
+//    self.navigationI
+    self.navigationBar.tintAdjustmentMode = UIViewTintAdjustmentModeAutomatic;
+    self.navigationBar.titleTextAttributes = @{
                                                                     NSFontAttributeName : [UIFont systemFontOfSize:13],
                                                                     NSForegroundColorAttributeName : [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8]
                                                                     

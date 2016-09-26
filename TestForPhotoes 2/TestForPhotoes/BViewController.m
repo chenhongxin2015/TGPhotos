@@ -145,7 +145,7 @@ static  ALAssetsLibrary *_assetsLibrary;
 
     
 }
-
+#pragma mark -- 从相机获取图片
 - (void)selectedCameraImage
 {
     if ([self.navigationController.viewControllers[self.navigationController.viewControllers.count - 1] isKindOfClass:[BViewController class]]) {
