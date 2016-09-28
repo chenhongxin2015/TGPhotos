@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181657991D8E90B900C93671 /* TGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 181657981D8E90B900C93671 /* TGImage.m */; };
 		1816579C1D8EC5F200C93671 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1816579B1D8EC5F200C93671 /* BViewController.m */; };
-		181657A01D8F963500C93671 /* TGImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1816579E1D8F963500C93671 /* TGImageCell.m */; };
-		181657A11D8F963500C93671 /* TGImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1816579F1D8F963500C93671 /* TGImageCell.xib */; };
-		181657A41D8FCAB300C93671 /* TGAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181657A31D8FCAB300C93671 /* TGAssetModel.m */; };
-		181657A71D8FCE0300C93671 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181657A61D8FCE0300C93671 /* AViewController.m */; };
-		181657AA1D8FCF2700C93671 /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181657A91D8FCF2700C93671 /* CViewController.m */; };
-		181657AE1D8FFE2D00C93671 /* TGSelectedImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181657AC1D8FFE2D00C93671 /* TGSelectedImageCell.m */; };
-		181657AF1D8FFE2D00C93671 /* TGSelectedImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181657AD1D8FFE2D00C93671 /* TGSelectedImageCell.xib */; };
-		181657B21D913D7F00C93671 /* TGPickerImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 181657B11D913D7F00C93671 /* TGPickerImageManager.m */; };
-		18835F1E1D9235A500A4E1BC /* TGNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18835F1D1D9235A500A4E1BC /* TGNaviController.m */; };
 		18835F221D938FC700A4E1BC /* DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18835F211D938FC700A4E1BC /* DViewController.m */; };
+		189D6F921D9B739F00258707 /* TGAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F831D9B739F00258707 /* TGAssetModel.m */; };
+		189D6F931D9B739F00258707 /* TGImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F851D9B739F00258707 /* TGImageCell.m */; };
+		189D6F941D9B739F00258707 /* TGImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189D6F861D9B739F00258707 /* TGImageCell.xib */; };
+		189D6F951D9B739F00258707 /* TGNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F881D9B739F00258707 /* TGNaviController.m */; };
+		189D6F961D9B739F00258707 /* TGPhotoLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F8A1D9B739F00258707 /* TGPhotoLibraryController.m */; };
+		189D6F971D9B739F00258707 /* TGPickerImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F8C1D9B739F00258707 /* TGPickerImageManager.m */; };
+		189D6F981D9B739F00258707 /* TGSelecedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F8E1D9B739F00258707 /* TGSelecedController.m */; };
+		189D6F991D9B739F00258707 /* TGSelectedImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189D6F901D9B739F00258707 /* TGSelectedImageCell.m */; };
+		189D6F9A1D9B739F00258707 /* TGSelectedImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189D6F911D9B739F00258707 /* TGSelectedImageCell.xib */; };
+		189D6F9C1D9B73E500258707 /* 上传图片2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189D6F9B1D9B73E500258707 /* 上传图片2.png */; };
 		68F11A801D8BC6A7009583A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F11A7F1D8BC6A7009583A0 /* main.m */; };
 		68F11A831D8BC6A7009583A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F11A821D8BC6A7009583A0 /* AppDelegate.m */; };
 		68F11A891D8BC6A7009583A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F11A871D8BC6A7009583A0 /* Main.storyboard */; };
@@ -28,8 +28,6 @@
 		68F11AA41D8BC6A7009583A0 /* TestForPhotoesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F11AA31D8BC6A7009583A0 /* TestForPhotoesUITests.m */; };
 		68F11AB21D8BC6CC009583A0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F11AB11D8BC6CC009583A0 /* AssetsLibrary.framework */; };
 		68F11AB41D8BC6D3009583A0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F11AB31D8BC6D3009583A0 /* Photos.framework */; };
-		68F11AEB1D8BD466009583A0 /* 上传图片1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F11AEA1D8BD466009583A0 /* 上传图片1.png */; };
-		68F11AED1D8BD46E009583A0 /* 上传图片2.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F11AEC1D8BD46E009583A0 /* 上传图片2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,29 +48,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		181657971D8E90B900C93671 /* TGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGImage.h; sourceTree = "<group>"; };
-		181657981D8E90B900C93671 /* TGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGImage.m; sourceTree = "<group>"; };
 		1816579A1D8EC5F200C93671 /* BViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
 		1816579B1D8EC5F200C93671 /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
-		1816579D1D8F963500C93671 /* TGImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGImageCell.h; sourceTree = "<group>"; };
-		1816579E1D8F963500C93671 /* TGImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGImageCell.m; sourceTree = "<group>"; };
-		1816579F1D8F963500C93671 /* TGImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGImageCell.xib; sourceTree = "<group>"; };
-		181657A21D8FCAB300C93671 /* TGAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetModel.h; sourceTree = "<group>"; };
-		181657A31D8FCAB300C93671 /* TGAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAssetModel.m; sourceTree = "<group>"; };
-		181657A51D8FCE0300C93671 /* AViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
-		181657A61D8FCE0300C93671 /* AViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
-		181657A81D8FCF2700C93671 /* CViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
-		181657A91D8FCF2700C93671 /* CViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
-		181657AB1D8FFE2D00C93671 /* TGSelectedImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSelectedImageCell.h; sourceTree = "<group>"; };
-		181657AC1D8FFE2D00C93671 /* TGSelectedImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSelectedImageCell.m; sourceTree = "<group>"; };
-		181657AD1D8FFE2D00C93671 /* TGSelectedImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGSelectedImageCell.xib; sourceTree = "<group>"; };
-		181657B01D913D7F00C93671 /* TGPickerImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPickerImageManager.h; sourceTree = "<group>"; };
-		181657B11D913D7F00C93671 /* TGPickerImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPickerImageManager.m; sourceTree = "<group>"; };
-		18835F1C1D9235A500A4E1BC /* TGNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGNaviController.h; sourceTree = "<group>"; };
-		18835F1D1D9235A500A4E1BC /* TGNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGNaviController.m; sourceTree = "<group>"; };
 		18835F1F1D929E7700A4E1BC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18835F201D938FC700A4E1BC /* DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DViewController.h; sourceTree = "<group>"; };
 		18835F211D938FC700A4E1BC /* DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DViewController.m; sourceTree = "<group>"; };
+		189D6F821D9B739F00258707 /* TGAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetModel.h; sourceTree = "<group>"; };
+		189D6F831D9B739F00258707 /* TGAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAssetModel.m; sourceTree = "<group>"; };
+		189D6F841D9B739F00258707 /* TGImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGImageCell.h; sourceTree = "<group>"; };
+		189D6F851D9B739F00258707 /* TGImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGImageCell.m; sourceTree = "<group>"; };
+		189D6F861D9B739F00258707 /* TGImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGImageCell.xib; sourceTree = "<group>"; };
+		189D6F871D9B739F00258707 /* TGNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGNaviController.h; sourceTree = "<group>"; };
+		189D6F881D9B739F00258707 /* TGNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGNaviController.m; sourceTree = "<group>"; };
+		189D6F891D9B739F00258707 /* TGPhotoLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPhotoLibraryController.h; sourceTree = "<group>"; };
+		189D6F8A1D9B739F00258707 /* TGPhotoLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPhotoLibraryController.m; sourceTree = "<group>"; };
+		189D6F8B1D9B739F00258707 /* TGPickerImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPickerImageManager.h; sourceTree = "<group>"; };
+		189D6F8C1D9B739F00258707 /* TGPickerImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPickerImageManager.m; sourceTree = "<group>"; };
+		189D6F8D1D9B739F00258707 /* TGSelecedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSelecedController.h; sourceTree = "<group>"; };
+		189D6F8E1D9B739F00258707 /* TGSelecedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSelecedController.m; sourceTree = "<group>"; };
+		189D6F8F1D9B739F00258707 /* TGSelectedImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSelectedImageCell.h; sourceTree = "<group>"; };
+		189D6F901D9B739F00258707 /* TGSelectedImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSelectedImageCell.m; sourceTree = "<group>"; };
+		189D6F911D9B739F00258707 /* TGSelectedImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGSelectedImageCell.xib; sourceTree = "<group>"; };
+		189D6F9B1D9B73E500258707 /* 上传图片2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上传图片2.png"; sourceTree = "<group>"; };
 		68F11A7B1D8BC6A7009583A0 /* TestForPhotoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestForPhotoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F11A7F1D8BC6A7009583A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68F11A811D8BC6A7009583A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 		68F11AA51D8BC6A7009583A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68F11AB11D8BC6CC009583A0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		68F11AB31D8BC6D3009583A0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		68F11AEA1D8BD466009583A0 /* 上传图片1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上传图片1.png"; sourceTree = "<group>"; };
-		68F11AEC1D8BD46E009583A0 /* 上传图片2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上传图片2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +115,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189D6F811D9B739F00258707 /* TGPhotosManager */ = {
+			isa = PBXGroup;
+			children = (
+				189D6F9B1D9B73E500258707 /* 上传图片2.png */,
+				189D6F821D9B739F00258707 /* TGAssetModel.h */,
+				189D6F831D9B739F00258707 /* TGAssetModel.m */,
+				189D6F841D9B739F00258707 /* TGImageCell.h */,
+				189D6F851D9B739F00258707 /* TGImageCell.m */,
+				189D6F861D9B739F00258707 /* TGImageCell.xib */,
+				189D6F871D9B739F00258707 /* TGNaviController.h */,
+				189D6F881D9B739F00258707 /* TGNaviController.m */,
+				189D6F891D9B739F00258707 /* TGPhotoLibraryController.h */,
+				189D6F8A1D9B739F00258707 /* TGPhotoLibraryController.m */,
+				189D6F8B1D9B739F00258707 /* TGPickerImageManager.h */,
+				189D6F8C1D9B739F00258707 /* TGPickerImageManager.m */,
+				189D6F8D1D9B739F00258707 /* TGSelecedController.h */,
+				189D6F8E1D9B739F00258707 /* TGSelecedController.m */,
+				189D6F8F1D9B739F00258707 /* TGSelectedImageCell.h */,
+				189D6F901D9B739F00258707 /* TGSelectedImageCell.m */,
+				189D6F911D9B739F00258707 /* TGSelectedImageCell.xib */,
+			);
+			path = TGPhotosManager;
+			sourceTree = "<group>";
+		};
 		68F11A721D8BC6A7009583A0 = {
 			isa = PBXGroup;
 			children = (
@@ -145,32 +164,13 @@
 		68F11A7D1D8BC6A7009583A0 /* TestForPhotoes */ = {
 			isa = PBXGroup;
 			children = (
-				68F11AEC1D8BD46E009583A0 /* 上传图片2.png */,
-				68F11AEA1D8BD466009583A0 /* 上传图片1.png */,
+				189D6F811D9B739F00258707 /* TGPhotosManager */,
 				68F11A811D8BC6A7009583A0 /* AppDelegate.h */,
 				68F11A821D8BC6A7009583A0 /* AppDelegate.m */,
 				18835F201D938FC700A4E1BC /* DViewController.h */,
 				18835F211D938FC700A4E1BC /* DViewController.m */,
-				18835F1C1D9235A500A4E1BC /* TGNaviController.h */,
-				18835F1D1D9235A500A4E1BC /* TGNaviController.m */,
 				1816579A1D8EC5F200C93671 /* BViewController.h */,
 				1816579B1D8EC5F200C93671 /* BViewController.m */,
-				181657B01D913D7F00C93671 /* TGPickerImageManager.h */,
-				181657B11D913D7F00C93671 /* TGPickerImageManager.m */,
-				181657A51D8FCE0300C93671 /* AViewController.h */,
-				181657A61D8FCE0300C93671 /* AViewController.m */,
-				181657A81D8FCF2700C93671 /* CViewController.h */,
-				181657A91D8FCF2700C93671 /* CViewController.m */,
-				181657AB1D8FFE2D00C93671 /* TGSelectedImageCell.h */,
-				181657AC1D8FFE2D00C93671 /* TGSelectedImageCell.m */,
-				181657AD1D8FFE2D00C93671 /* TGSelectedImageCell.xib */,
-				1816579D1D8F963500C93671 /* TGImageCell.h */,
-				1816579E1D8F963500C93671 /* TGImageCell.m */,
-				1816579F1D8F963500C93671 /* TGImageCell.xib */,
-				181657A21D8FCAB300C93671 /* TGAssetModel.h */,
-				181657A31D8FCAB300C93671 /* TGAssetModel.m */,
-				181657971D8E90B900C93671 /* TGImage.h */,
-				181657981D8E90B900C93671 /* TGImage.m */,
 				68F11A871D8BC6A7009583A0 /* Main.storyboard */,
 				18835F1F1D929E7700A4E1BC /* PrefixHeader.pch */,
 				68F11A8A1D8BC6A7009583A0 /* Assets.xcassets */,
@@ -312,12 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				68F11A8E1D8BC6A7009583A0 /* LaunchScreen.storyboard in Resources */,
-				68F11AEB1D8BD466009583A0 /* 上传图片1.png in Resources */,
 				68F11A8B1D8BC6A7009583A0 /* Assets.xcassets in Resources */,
-				181657AF1D8FFE2D00C93671 /* TGSelectedImageCell.xib in Resources */,
 				68F11A891D8BC6A7009583A0 /* Main.storyboard in Resources */,
-				68F11AED1D8BD46E009583A0 /* 上传图片2.png in Resources */,
-				181657A11D8F963500C93671 /* TGImageCell.xib in Resources */,
+				189D6F9A1D9B739F00258707 /* TGSelectedImageCell.xib in Resources */,
+				189D6F9C1D9B73E500258707 /* 上传图片2.png in Resources */,
+				189D6F941D9B739F00258707 /* TGImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,17 +341,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181657991D8E90B900C93671 /* TGImage.m in Sources */,
-				18835F1E1D9235A500A4E1BC /* TGNaviController.m in Sources */,
+				189D6F981D9B739F00258707 /* TGSelecedController.m in Sources */,
+				189D6F951D9B739F00258707 /* TGNaviController.m in Sources */,
+				189D6F961D9B739F00258707 /* TGPhotoLibraryController.m in Sources */,
 				68F11A831D8BC6A7009583A0 /* AppDelegate.m in Sources */,
 				18835F221D938FC700A4E1BC /* DViewController.m in Sources */,
-				181657A41D8FCAB300C93671 /* TGAssetModel.m in Sources */,
-				181657AA1D8FCF2700C93671 /* CViewController.m in Sources */,
-				181657B21D913D7F00C93671 /* TGPickerImageManager.m in Sources */,
+				189D6F931D9B739F00258707 /* TGImageCell.m in Sources */,
+				189D6F921D9B739F00258707 /* TGAssetModel.m in Sources */,
 				1816579C1D8EC5F200C93671 /* BViewController.m in Sources */,
-				181657AE1D8FFE2D00C93671 /* TGSelectedImageCell.m in Sources */,
-				181657A71D8FCE0300C93671 /* AViewController.m in Sources */,
-				181657A01D8F963500C93671 /* TGImageCell.m in Sources */,
+				189D6F971D9B739F00258707 /* TGPickerImageManager.m in Sources */,
+				189D6F991D9B739F00258707 /* TGSelectedImageCell.m in Sources */,
 				68F11A801D8BC6A7009583A0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

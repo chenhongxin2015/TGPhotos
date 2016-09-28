@@ -10,7 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "TGPickerImageManager.h"
 //#import "BViewController.h"
-@interface CViewController : UIViewController
+@interface TGSelecedController : UIViewController
 @property (nonatomic,weak) TGPickerImageManager *pickerManager;
 
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BViewController : UIViewController
-- (void)pushToCVC;
+
 @end

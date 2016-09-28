@@ -6,11 +6,11 @@
 //  Copyright © 2016年 lzq. All rights reserved.
 //
 
-#import "AViewController.h"
+#import "TGPhotoLibraryController.h"
 #import "TGImageCell.h"
 #define TG_W [UIScreen mainScreen].bounds.size.width
 #define TG_H [UIScreen mainScreen].bounds.size.height
-@interface AViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface TGPhotoLibraryController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,assign) NSInteger count;
 
@@ -18,7 +18,7 @@
 @property (nonatomic,strong) UILabel *promptTitleLabel;
 @end
 
-@implementation AViewController
+@implementation TGPhotoLibraryController
 - (UILabel *)promptTitleLabel
 {
     if (!_promptTitleLabel) {
@@ -200,11 +200,9 @@
     
     self.manager.imagesAssetArray = _imagesAssetArray;
     self.manager.selectedImages = _selectedImages;
-
     [self.navigationController popViewControllerAnimated:YES];
-    
-    if (self.delegate) {
-         [self.delegate pushToCVC];
+    if ([self.delegate respondsToSelector:@selector(pushToSelectedVC)]  ) {
+         [self.delegate pushToSelectedVC];
     }
    
 }

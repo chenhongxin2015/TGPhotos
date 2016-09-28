@@ -8,15 +8,15 @@
 
 #import "TGPickerImageManager.h"
 #import "TGAssetModel.h"
-#import "CViewController.h"
+#import "TGSelecedController.h"
 #define TG_DEBUG
 static  ALAssetsLibrary *_assetsLibrary;
 
 @implementation TGPickerImageManager
-- (CViewController *)selectedVC
+- (TGSelecedController *)selectedVC
 {
     if (!_selectedVC) {
-        _selectedVC = [CViewController new];
+        _selectedVC = [TGSelecedController new];
         _selectedVC.pickerManager = self;
     }return _selectedVC;
 }
@@ -144,9 +144,19 @@ static  ALAssetsLibrary *_assetsLibrary;
     if (status == PHAuthorizationStatusRestricted ||
         status == PHAuthorizationStatusDenied) {
         // 这里便是无访问权限
+        
+        [self.delegate pikerImageFinishedFromCamera:isCamera];
+        
     }else
     {
-        [[PHPhotoLibrary sharedPhotoLibrary]registerChangeObserver:self] ;
+        
+        if (status == PHAuthorizationStatusNotDetermined) {
+            [[PHPhotoLibrary sharedPhotoLibrary]registerChangeObserver:self] ;
+            return;
+        }
+        
+        
+        
 //        library 
         [self getAllAssetInPhotoAblumWithAscending:NO fromCamera:isCamera];
 
@@ -238,6 +248,12 @@ static  ALAssetsLibrary *_assetsLibrary;
         // your codes
         NSLog(@"保存相册");
         
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (!(status == PHAuthorizationStatusRestricted ||
+            status == PHAuthorizationStatusDenied)){
+            
+         [self getAllAssetInPhotoAblumWithAscending:NO fromCamera:NO];
+        }
     });
     
     
@@ -264,6 +280,10 @@ static  ALAssetsLibrary *_assetsLibrary;
     
     
     [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if (*stop) {
+            NSLog(@"yes");
+        }
         PHAsset *asset = (PHAsset *)obj;
         NSLog(@"照片名%@", [asset valueForKey:@"filename"]);
         TGAssetModel *model = [TGAssetModel new];
@@ -277,39 +297,13 @@ static  ALAssetsLibrary *_assetsLibrary;
          NSLog(@"当前方法：%s\n,当前行数%d\n,当前线程%@\n",__func__,__LINE__,[NSThread currentThread]);
 #endif
     }];
+    
+    
     [self.delegate pikerImageFinishedFromCamera:isCamera];
     return assets;
 }
 
 
-//// 点击保存调用
-//- (IBAction)save:(id)sender {
-//    //查看当前app授权状态
-//    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-//    switch (status) {
-//        case PHAuthorizationStatusNotDetermined:
-//        { // 未授权,弹出授权框
-//            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-//                // 用户选择完毕就会调用—选择允许,直接保存
-//                if (status == PHAuthorizationStatusAuthorized) {
-//                    [self savePhoto];
-//                }
-//            }];
-//            选择不允许访问,就不保存
-//            break;
-//        }
-//        case PHAuthorizationStatusAuthorized:
-//        { // 授权,就直接保存
-//            [self savePhoto];
-//            break;
-//        }
-//        default:
-//        {// 拒绝   告知用户去哪打开授权
-//            [SVProgressHUD showInfoWithStatus:@"打开设置 -> 查找百思不得姐 -> 打开照片开关 -> 允许当前app访问系统相册就可以保存图片"];
-//            break;
-//        }
-//    }
-//}
 
 // 添加图片到自己相册
 - (void)savePhoto:(UIImage *)image viewController:(UIViewController *)pikerVC
@@ -319,25 +313,7 @@ static  ALAssetsLibrary *_assetsLibrary;
         // 把图片放在系统相册
         PHAssetCreationRequest *assetCreationRequest = [PHAssetCreationRequest creationRequestForAssetFromImage:image];
         
-        // 2.创建相册请求类(修改相册)PHAssetCollectionChangeRequest
-//        PHAssetCollectionChangeRequest *assetCollectionChangeRequest = nil;
-//        
-//        // 获取之前相册
-//        PHAssetCollection *assetCollection = [self fetchAssetCollection:@"上传照片"];
-        
-        // 判断是否已有相册
-//        if (assetCollection) {
-//            // 如果存在已有同名相册   指定这个相册,创建相册请求修改类
-//            assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
-//        } else {  //不存在,创建新的相册
-//            assetCollectionChangeRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:@"上传照片"];
-//        }
-        // 3.把图片添加到相册中
-        // NSFastEnumeration:以后只要看到这个,就可以表示数组
-        //assetCreationRequest.placeholderForCreatedAsset 图片请求类占位符(相当于一个内存地址)
-        //因为creationRequestForAssetFromImage方法是异步实行的,在这里不能保证 assetCreationRequest有值
-        
-//        [assetCollectionChangeRequest addAssets:@[assetCreationRequest.placeholderForCreatedAsset]];
+
         
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
          NSLog(@"当前方法：%s\n,当前行数%d\n,当前线程%@\n",__func__,__LINE__,[NSThread currentThread]);

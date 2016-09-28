@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BViewController.h"
+//#import "BViewController.h"
 #import "TGPickerImageManager.h"
-@interface AViewController : UIViewController
+@protocol TGPhotoLibraryControllerDelegate <NSObject>
+
+- (void)pushToSelectedVC;
+
+@end
+@interface TGPhotoLibraryController : UIViewController
+
 @property (nonatomic,strong) TGPickerImageManager *manager;
 @property (nonatomic,strong)   NSMutableArray *imagesAssetArray;
 @property (nonatomic,strong) NSMutableArray *selectedImages;
-@property (nonatomic,weak) BViewController *delegate;
+@property (nonatomic,weak) id <TGPhotoLibraryControllerDelegate> delegate;
 
 @end

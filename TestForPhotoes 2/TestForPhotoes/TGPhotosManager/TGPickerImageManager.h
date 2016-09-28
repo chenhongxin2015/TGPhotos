@@ -11,7 +11,7 @@
 #import <Photos/Photos.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 //#import "CViewController.h"
-@class CViewController;
+@class TGSelecedController;
 @protocol  TGPickerImageManagerDelegate<NSObject>
 @optional
 - (void)pikerImageFinishedFromCamera:(BOOL)isCamera;
@@ -29,7 +29,7 @@
 ;
 @property (nonatomic,assign) NSInteger maxCount;//默认九张图片
 @property (nonatomic,strong) UIImagePickerController *cameraVC;
-@property (nonatomic,strong)  CViewController *selectedVC;
+@property (nonatomic,strong)  TGSelecedController *selectedVC;
 //- (instancetype)initWithMaxImageCount:(NSInteger)
 - (void)getListPhotosFromCamera:(BOOL)isCamera;
 @end

@@ -10,12 +10,12 @@
 //#import "ViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "TGImageCell.h"
-#import "CViewController.h"
-#import "AViewController.h"
+#import "TGSelecedController.h"
+#import "TGPhotoLibraryController.h"
 #import "TGAssetModel.h"
 #import "TGPickerImageManager.h"
 static  ALAssetsLibrary *_assetsLibrary;
-@interface BViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,TGPickerImageManagerDelegate>
+@interface BViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,TGPickerImageManagerDelegate,TGPhotoLibraryControllerDelegate>
 {
    
     NSMutableArray *_albumsArray;
@@ -23,10 +23,11 @@ static  ALAssetsLibrary *_assetsLibrary;
 //    ALAssetsLibrary *library;
     
 }
-@property (nonatomic,strong) TGPickerImageManager *pickerManager;
-@property (nonatomic,strong)   NSMutableArray *selectedImages;
-;
 
+@property (nonatomic,strong) TGPickerImageManager *pickerManager;
+//@property (nonatomic,strong)   NSMutableArray *selectedImages;
+;
+//- (void)pushToCVC;
 @end
 
 @implementation BViewController
@@ -37,12 +38,7 @@ static  ALAssetsLibrary *_assetsLibrary;
         _pickerManager.delegate = self;
     }return _pickerManager;
 }
-- (NSMutableArray *)selectedImages
-{
-    if (!_selectedImages) {
-        _selectedImages = [NSMutableArray array];
-    }return _selectedImages;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
   
@@ -50,38 +46,15 @@ static  ALAssetsLibrary *_assetsLibrary;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-//    if (self.pickerManager.selectedImages.count) {
-//        TGAssetModel *asset = self.pickerManager.selectedImages[0];
-//        ALAsset *asset1 = asset.asset;
-//        ALAssetRepresentation *def = [asset1 defaultRepresentation];
-//        UIImage *image =[UIImage imageWithCGImage: [def fullScreenImage]];
-//    }
-// 
-    
+
     self.pickerManager.delegate = self;
 }
-
-- (void)pikerImageFinishedFromCamera:(BOOL)isCamera
-{
-    if (isCamera) {
-        return;
-    }
-    
-    
-    [self pushToAVC];
-}
-
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
  
     if (self.pickerManager.selectedImages.count) {
-        
-//        CViewController *CVC = [CViewController new];
-//        CVC.pickerManager = self.pickerManager;
-//
-//        self.pickerManager.selectedVC.pickerManager = se
+
         [self.navigationController pushViewController:self.pickerManager.selectedVC animated:YES];
         return;
     }
@@ -110,66 +83,26 @@ static  ALAssetsLibrary *_assetsLibrary;
 
 - (void)pushToAVC
 {
-    AViewController *avc = [AViewController new];
+    TGPhotoLibraryController *avc = [TGPhotoLibraryController new];
     avc.manager= self.pickerManager;
     avc.delegate = self;
     
     [self.navigationController pushViewController:avc animated:YES];
 }
-- (void)selecteImages
-{
-
-    
-    if (self.selectedImages.count) {
-        CViewController *CVC = [CViewController new];
-
-        [self.navigationController pushViewController:CVC animated:YES];
-        return;
-    }
-
-}
 
 
+//
+//- (void)pushToCVC
+//{
+//
+//    if (self.pickerManager.selectedImages.count) {
+//        [self.navigationController pushViewController:self.pickerManager.selectedVC animated:YES];
+//        return;
+//    }
+//
+//    
+//}
 
-- (void)pushToCVC
-{
-
-    
-    if (self.pickerManager.selectedImages.count) {
-//        CViewController *CVC = [CViewController new];
-//        CVC.pickerManager = self.pickerManager;
-
-        [self.navigationController pushViewController:self.pickerManager.selectedVC animated:YES];
-        return;
-    }
-
-    
-}
-#pragma mark -- 从相机获取图片
-- (void)selectedCameraImage
-{
-    if ([self.navigationController.viewControllers[self.navigationController.viewControllers.count - 1] isKindOfClass:[BViewController class]]) {
-        [self pushToCVC];
-    }
-}
-
-- (void)pushCVCToWarning
-{
-    [self pushToCVC];
-}
-
-
-
-
-
-#pragma mark-- 拍照
-- (void)getImageFromCamera
-{
-    
-    [self.pickerManager getListPhotosFromCamera:YES];
-  
-    [self presentViewController:self.pickerManager.cameraVC animated:YES completion:nil];
-}
 
 
 
@@ -178,8 +111,57 @@ static  ALAssetsLibrary *_assetsLibrary;
 - (void)dealloc
 {
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
-//removeAllCachedResponses
+
 }
+
+#pragma mark -- TGPickerImageManagerDelegate
+- (void)pikerImageFinishedFromCamera:(BOOL)isCamera
+{
+    if (isCamera) {
+        return;
+    }
+    
+    
+    [self pushToAVC];
+}
+- (void)getImageFromCamera
+{
+    
+    [self.pickerManager getListPhotosFromCamera:YES];
+    
+    [self presentViewController:self.pickerManager.cameraVC animated:YES completion:nil];
+}
+- (void)selectedCameraImage
+{
+    if ([self.navigationController.viewControllers[self.navigationController.viewControllers.count - 1] isKindOfClass:[BViewController class]]) {
+        if (self.pickerManager.selectedImages.count) {
+            [self.navigationController pushViewController:self.pickerManager.selectedVC animated:YES];
+            return;
+        }
+    }
+}
+
+- (void)pushCVCToWarning
+{
+    
+    if (self.pickerManager.selectedImages.count) {
+        [self.navigationController pushViewController:self.pickerManager.selectedVC animated:YES];
+        return;
+    }
+//    [self pushToCVC];
+}
+#pragma mark -- TGPhotoLibraryControllerDelegate
+- (void)pushToSelectedVC{
+    
+    if (self.pickerManager.selectedImages.count) {
+        [self.navigationController pushViewController:self.pickerManager.selectedVC animated:YES];
+        return;
+    }
+    
+    //    [self pushToCVC];
+}
+
+
 
 
 @end

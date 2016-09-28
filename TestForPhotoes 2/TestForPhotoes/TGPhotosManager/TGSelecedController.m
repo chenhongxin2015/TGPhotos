@@ -6,14 +6,14 @@
 //  Copyright © 2016年 lzq. All rights reserved.
 //
 
-#import "CViewController.h"
+#import "TGSelecedController.h"
 #import "TGSelectedImageCell.h"
-#import "AViewController.h"
+#import "TGPhotoLibraryController.h"
 
 #define TG_RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define TG_W [UIScreen mainScreen].bounds.size.width
 #define TG_H [UIScreen mainScreen].bounds.size.height
-@interface CViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TGPickerImageManagerDelegate>
+@interface TGSelecedController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TGPickerImageManagerDelegate>
 {
 
 
@@ -22,7 +22,7 @@
 @property (nonatomic,strong) UIButton *sureBtn;
 @end
 
-@implementation CViewController
+@implementation TGSelecedController
 - (UIButton *)sureBtn
 {
     if (!_sureBtn) {
@@ -38,7 +38,7 @@
 #warning 实际逻辑
 - (void)sureImage
 {
-
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -103,7 +103,7 @@
 
 - (void)getFromLibrary
 {
-    AViewController *avc = [AViewController new];
+    TGPhotoLibraryController *avc = [TGPhotoLibraryController new];
     avc.manager = self.pickerManager;
 
     [self.navigationController pushViewController:avc animated:YES];
