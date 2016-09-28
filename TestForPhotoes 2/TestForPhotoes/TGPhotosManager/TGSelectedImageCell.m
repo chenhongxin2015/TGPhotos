@@ -10,9 +10,9 @@
 
 @implementation TGSelectedImageCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+//- (void)awakeFromNib {
+//    // Initialization code
+//}
 - (void)setAsset:(TGAssetModel *)asset
 {
     _asset = asset;

@@ -10,9 +10,7 @@
 #import <Photos/Photos.h>
 @implementation TGImageCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+
 - (void)setAsset:(TGAssetModel *)asset
 {
     _asset = asset;
@@ -30,7 +28,7 @@
     option.resizeMode = PHImageRequestOptionsResizeModeFast;
     option.networkAccessAllowed = YES;
     //param：targetSize 即你想要的图片尺寸，若想要原尺寸则可输入PHImageManagerMaximumSize
-    __block NSInteger num = 0;
+//    __block NSInteger num = 0;
     [[PHCachingImageManager defaultManager] requestImageForAsset:asset.pAsset targetSize:CGSizeMake(self.bounds.size.width * 3, self.bounds.size.height * 3) contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
 
         self.imageView.image = [self wf_thumbnailsCutfullPhoto:image];

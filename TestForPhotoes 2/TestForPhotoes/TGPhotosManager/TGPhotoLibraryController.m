@@ -5,7 +5,7 @@
 //  Created by apple on 16/9/19.
 //  Copyright © 2016年 lzq. All rights reserved.
 //
-
+#import "TGPickerImageManager.h"
 #import "TGPhotoLibraryController.h"
 #import "TGImageCell.h"
 #define TG_W [UIScreen mainScreen].bounds.size.width
@@ -117,7 +117,7 @@
     if (model.isSelected) {
         
         if (self.count >=self.manager.maxCount) {
-            NSString *message = [NSString stringWithFormat:@"最多选择%ld张图片",self.manager.maxCount];
+            NSString *message = [NSString stringWithFormat:@"最多选择%ld张图片",(long)self.manager.maxCount];
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -158,7 +158,7 @@
      
        
     }
-    self.title = [NSString stringWithFormat:@"已选%ld张",self.count];
+    self.title = [NSString stringWithFormat:@"已选%ld张",(long)self.count];
 //    cell.asset = model;
     cell.selectedBtn.hidden = !model.isSelected;
     [collectionView reloadItemsAtIndexPaths:@[indexPath]];
@@ -172,14 +172,23 @@
     [self finishBtn];//加载确定按钮
     [self collectionView];//加载collectionView
 
-    self.count = self.manager.selectedImages.count;
    
-    self.title = [NSString stringWithFormat:@"已选%ld张", self.manager.imagesAssetArray.count];
     //显示选中图片张数
 
     [self setupNavigationItems];//设置导航
     
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.count = self.manager.selectedImages.count;
+    
+    self.title = [NSString stringWithFormat:@"已选%ld张", (unsigned long)self.count];
+    _selectedImages = [[NSMutableArray alloc]initWithArray:self.manager.selectedImages copyItems:YES];
+    _imagesAssetArray = [[NSMutableArray alloc]initWithArray:self.manager.imagesAssetArray copyItems:YES];
+    [self.collectionView reloadData];
 }
 - (void)setupNavigationItems
 {
@@ -206,6 +215,9 @@
     }
    
 }
+
+
+
 - (void)dealloc
 {
     NSLog(@"AVC death");

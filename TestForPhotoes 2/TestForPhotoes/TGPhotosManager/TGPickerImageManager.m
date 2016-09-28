@@ -7,19 +7,33 @@
 //
 
 #import "TGPickerImageManager.h"
-#import "TGAssetModel.h"
-#import "TGSelecedController.h"
+
+//#import "TGSelecedController.h"
+//#import "TGPhotoLibraryController.h"
 #define TG_DEBUG
 static  ALAssetsLibrary *_assetsLibrary;
+@interface TGPickerImageManager ()<TGPhotoLibraryControllerDelegate>
 
+@end
 @implementation TGPickerImageManager
 - (TGSelecedController *)selectedVC
 {
     if (!_selectedVC) {
         _selectedVC = [TGSelecedController new];
         _selectedVC.pickerManager = self;
+        
     }return _selectedVC;
 }
+
+- (TGPhotoLibraryController *)photoVC
+{
+    if (!_photoVC) {
+        _photoVC = [TGPhotoLibraryController new];
+        _photoVC.manager = self;
+        _photoVC.delegate = self;
+    }return _photoVC;
+}
+
 - (instancetype)init
 {
     if (self = [super init]) {
@@ -311,7 +325,7 @@ static  ALAssetsLibrary *_assetsLibrary;
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         // 1.创建图片请求类(创建系统相册中新的图片)PHAssetCreationRequest
         // 把图片放在系统相册
-        PHAssetCreationRequest *assetCreationRequest = [PHAssetCreationRequest creationRequestForAssetFromImage:image];
+      [PHAssetCreationRequest creationRequestForAssetFromImage:image];
         
 
         
@@ -385,7 +399,12 @@ static  ALAssetsLibrary *_assetsLibrary;
     
     
 }
+#pragma mark -- TGPhotoLibraryControllerDelegate
+- (void)pushToSelectedVC
+{
 
+    [self.delegate pushCVCToWarning];
+}
 
 
 

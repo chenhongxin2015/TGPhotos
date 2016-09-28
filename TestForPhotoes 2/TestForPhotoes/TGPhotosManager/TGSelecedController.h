@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "TGPickerImageManager.h"
+
 //#import "BViewController.h"
+@class TGPickerImageManager;
 @interface TGSelecedController : UIViewController
 @property (nonatomic,weak) TGPickerImageManager *pickerManager;
 

@@ -9,7 +9,7 @@
 #import "TGSelecedController.h"
 #import "TGSelectedImageCell.h"
 #import "TGPhotoLibraryController.h"
-
+#import "TGPickerImageManager.h"
 #define TG_RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define TG_W [UIScreen mainScreen].bounds.size.width
 #define TG_H [UIScreen mainScreen].bounds.size.height
@@ -35,10 +35,63 @@
 }
 
 
-#warning 实际逻辑
+//#warning 实际逻辑
 - (void)sureImage
 {
+    NSMutableArray *arr = [NSMutableArray array];
+    for (TGAssetModel *model in self.pickerManager.selectedImages) {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_0
+        PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+        //仅显示缩略图，不控制质量显示
+        /**
+         PHImageRequestOptionsResizeModeNone,
+         PHImageRequestOptionsResizeModeFast, //根据传入的size，迅速加载大小相匹配(略大于或略小于)的图像
+         PHImageRequestOptionsResizeModeExact //精确的加载与传入size相匹配的图像
+         */
+        option.resizeMode = PHImageRequestOptionsResizeModeFast;
+        option.networkAccessAllowed = YES;
+        //param：targetSize 即你想要的图片尺寸，若想要原尺寸则可输入PHImageManagerMaximumSize
+        
+        typeof(self) weakSelf = self;
+        [[PHCachingImageManager defaultManager] requestImageForAsset:model.pAsset targetSize:CGSizeMake(TG_W * 3, TG_H * 3) contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+            //解析出来的图片
+            
+          
+            UIImageView *imageView = [UIImageView new];
+            imageView.image = image;
+             [arr addObject: imageView];
+        }];
+       
+       
+#else
+      [arr addObject: [UIImage imageWithCGImage:.asset.thumbnail];
+#endif
+
+    }
+     self.pickerManager.selecteImage = [arr copy];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+//裁剪图片,此处裁剪为125*125大的图,即为我们的缩略图
+- (UIImage *)wf_thumbnailsCutfullPhoto:(UIImage*)fullPhoto
+{
+    CGSize newSize;
+    CGImageRef imageRef = nil;
+    if ((fullPhoto.size.width / fullPhoto.size.height) < 1) {
+        newSize.width = fullPhoto.size.width;
+        newSize.height = fullPhoto.size.width * 1;
+        imageRef = CGImageCreateWithImageInRect([fullPhoto CGImage], CGRectMake(0, fabs(fullPhoto.size.height - newSize.height) / 2, newSize.width, newSize.height));
+        
+    } else {
+        newSize.height = fullPhoto.size.height;
+        newSize.width = fullPhoto.size.height * 1;
+        imageRef = CGImageCreateWithImageInRect([fullPhoto CGImage], CGRectMake(fabs(fullPhoto.size.width - newSize.width) / 2, 0, newSize.width, newSize.height));
+        
+    }
+    UIImage *image = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    return image;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -161,7 +214,7 @@
 {
     
   
-        NSString *message = [NSString stringWithFormat:@"最多选择%ld张图片,先删除不需要的图片",self.pickerManager.maxCount];
+        NSString *message = [NSString stringWithFormat:@"最多选择%ld张图片,先删除不需要的图片",(long)self.pickerManager.maxCount];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -199,12 +252,16 @@
         }
     }
 #endif
-    
-    
-    
+    [self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0 ]]];
+    if (index == 0&&self.pickerManager.selectedImages.count) {
+        
+        [self.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0 ]]];
+       
+    }
     
 
-    [self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0 ]]];
+
+    
     
 }
 
@@ -232,8 +289,7 @@
 {
     
     [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.pickerManager.selectedImages.count - 1 inSection:0]]];
-    
-//    [self.collectionView reloadData];
+
 }
 
 
