@@ -14,7 +14,6 @@
 - (void)setAsset:(TGAssetModel *)asset
 {
     _asset = asset;
-    
     // 获取资源图片的 fullScreenImage
 //    UIImage *contentImage = nil;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_0
@@ -30,7 +29,7 @@
     //param：targetSize 即你想要的图片尺寸，若想要原尺寸则可输入PHImageManagerMaximumSize
 //    __block NSInteger num = 0;
     [[PHCachingImageManager defaultManager] requestImageForAsset:asset.pAsset targetSize:CGSizeMake(self.bounds.size.width * 3, self.bounds.size.height * 3) contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
-
+//        self.imageView.image = image;
         self.imageView.image = [self wf_thumbnailsCutfullPhoto:image];
 
     }];

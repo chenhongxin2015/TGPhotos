@@ -30,7 +30,7 @@
 @property (nonatomic,strong) NSMutableArray *imagesAssetArray;;
 @property (nonatomic,strong)   NSMutableArray *selectedImages;
 ;
-@property (nonatomic,strong) NSArray *selecteImage;
+@property (nonatomic,strong) NSMutableArray *selecteImage;
 @property (nonatomic,assign) NSInteger maxCount;//默认九张图片
 @property (nonatomic,strong) UIImagePickerController *cameraVC;
 @property (nonatomic,strong)  TGSelecedController *selectedVC;

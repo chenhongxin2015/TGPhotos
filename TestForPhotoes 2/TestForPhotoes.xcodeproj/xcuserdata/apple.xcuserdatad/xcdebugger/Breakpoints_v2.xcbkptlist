@@ -226,7 +226,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.451004"
+                  timestampString = "496749645.52406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
@@ -241,7 +241,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.452624"
+                  timestampString = "496749645.525585"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
@@ -274,7 +274,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.45693"
+                  timestampString = "496749645.528899"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "332"
@@ -289,7 +289,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.458515"
+                  timestampString = "496749645.530425"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "332"
@@ -304,7 +304,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.460223"
+                  timestampString = "496749645.53193"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "332"
@@ -319,7 +319,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.462416"
+                  timestampString = "496749645.533433"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "332"
@@ -334,7 +334,7 @@
                   moduleName = "TestForPhotoes"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/TGPhotos/TestForPhotoes%202/TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
-                  timestampString = "496740157.465062"
+                  timestampString = "496749645.534937"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "332"
@@ -383,11 +383,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestForPhotoes/TGPhotosManager/TGSelecedController.m"
-            timestampString = "496743337.763968"
+            timestampString = "496748167.238991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-sureImage"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,13 +398,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestForPhotoes/TGPhotosManager/TGPhotoLibraryController.m"
-            timestampString = "496740047.076877"
+            filePath = "TestForPhotoes/TGPhotosManager/TGSelecedController.m"
+            timestampString = "496746811.189243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-sureImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestForPhotoes/BViewController.m"
+            timestampString = "496749645.395385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestForPhotoes/TGPhotosManager/TGSelecedController.m"
+            timestampString = "496748193.763808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-sureImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestForPhotoes/TGPhotosManager/TGSelecedController.m"
+            timestampString = "496748256.112564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-sureImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestForPhotoes/TGPhotosManager/TGPickerImageManager.m"
+            timestampString = "496749550.433261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "-getListPhotosFromCamera:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestForPhotoes/BViewController.m"
+            timestampString = "496749645.395385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-pikerImageFinishedFromCamera:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

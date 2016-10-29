@@ -35,6 +35,7 @@
     typeof(self) weakSelf = self;
     [[PHCachingImageManager defaultManager] requestImageForAsset:asset.pAsset targetSize:CGSizeMake(self.bounds.size.width * 3, self.bounds.size.height * 3) contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
         //解析出来的图片
+         NSLog(@"当前方法：%s\n,当前行数%d\n,当前线程%@\n",__func__,__LINE__,[NSThread currentThread]);
         self.imageView.image = [weakSelf wf_thumbnailsCutfullPhoto:image];
     }];
     

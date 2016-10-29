@@ -38,7 +38,7 @@
 //#warning 实际逻辑
 - (void)sureImage
 {
-    NSMutableArray *arr = [NSMutableArray array];
+    self.pickerManager.selecteImage = [NSMutableArray array];
     for (TGAssetModel *model in self.pickerManager.selectedImages) {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_0
         PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
@@ -59,7 +59,14 @@
           
             UIImageView *imageView = [UIImageView new];
             imageView.image = image;
-             [arr addObject: imageView];
+             [self.pickerManager.selecteImage addObject: imageView];
+            
+            if(self.pickerManager.selecteImage.count == self.pickerManager.selectedImages.count)
+            {
+                //     self.pickerManager.selecteImage = [arr copy];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        
         }];
        
        
@@ -68,8 +75,7 @@
 #endif
 
     }
-     self.pickerManager.selecteImage = [arr copy];
-    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 
