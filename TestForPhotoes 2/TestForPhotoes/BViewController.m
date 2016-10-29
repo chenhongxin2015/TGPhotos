@@ -36,14 +36,16 @@ static  ALAssetsLibrary *_assetsLibrary;
 {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        CGFloat w = (TG_W - 10)/3;
+//        CGFloat w = (TG_W - 10)/3;
         
-        layout.itemSize = CGSizeMake(TG_W - 10, TG_H - 50);
-        layout.minimumInteritemSpacing = 5;
-        layout.minimumLineSpacing = 5;
+        layout.itemSize = CGSizeMake(TG_W - 10 , TG_H - 50);
+        layout.minimumInteritemSpacing = 10;
+        layout.sectionInset = UIEdgeInsetsMake(64, 5, 0, 5);
+        layout.minimumLineSpacing = 10;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, TG_W, TG_H - 50) collectionViewLayout:layout];
+        _collectionView.pagingEnabled = YES;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         //        [_collectionView setBackgroundColor:[[UIColor alloc]initWithRed:230 green:230 blue:230 alpha:1]];
